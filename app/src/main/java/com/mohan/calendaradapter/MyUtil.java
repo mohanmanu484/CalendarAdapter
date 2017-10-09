@@ -18,6 +18,7 @@ public class MyUtil {
 
     public static String getWeekDayString(Date date){
         SimpleDateFormat fromSDF = new SimpleDateFormat("EEE", Locale.US);;
+
         return fromSDF.format(date);
     }
     public static String getDateAndMonthString(Date date){

@@ -27,7 +27,8 @@ public class CalendarAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public void setCalendarItems(List<Object> calendarItems) {
-        this.calendarItems = calendarItems;
+        this.calendarItems.clear();
+        this.calendarItems.addAll(calendarItems);
         notifyDataSetChanged();
     }
 
@@ -51,7 +52,6 @@ public class CalendarAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
         ((Binder)holder).setData(calendarItems.get(position));
     }
 
