@@ -4,6 +4,8 @@ import android.support.annotation.LayoutRes;
 import android.view.View;
 import android.widget.TextView;
 
+import com.mohan.calendaradapter.adapter.GenericViewholder;
+
 import java.util.Date;
 
 /**
@@ -36,7 +38,7 @@ public class ViewHolderFactory {
         }
 
         @Override
-        public void setData(final Date data) {
+        public void setData(final Date data,int pos) {
             weekDay.setText(MyUtil.getWeekDayString(data));
             date.setText(MyUtil.getDateAndMonthString(data));
         }
@@ -54,7 +56,7 @@ public class ViewHolderFactory {
 
 
         @Override
-        public void setData(String data) {
+        public void setData(String data,int pos) {
             priceData.setText(data);
         }
     }
@@ -67,7 +69,7 @@ public class ViewHolderFactory {
 
 
         @Override
-        public void setData(Empty data) {
+        public void setData(Empty data,int pos) {
 
         }
     }

@@ -1,4 +1,4 @@
-package com.mohan.calendaradapter;
+package com.mohan.calendaradapter.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -8,7 +8,7 @@ import android.view.View;
  */
 
 public abstract class GenericViewholder<T> extends RecyclerView.ViewHolder implements Binder<T>{
-    public GenericViewholder(View itemView) {
+    protected GenericViewholder(View itemView) {
         super(itemView);
     }
 }

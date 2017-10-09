@@ -8,6 +8,9 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.mohan.calendaradapter.adapter.GenericAdapter;
+import com.mohan.calendaradapter.adapter.GenericViewholder;
+
 import java.util.Date;
 
 /**
@@ -27,44 +30,21 @@ public class EmpyActivity extends AppCompatActivity {
         RecyclerView recyclerView=findViewById(R.id.observableList);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this,8));
-        observableList.add("Mon");
         observableList.add(new Date());
         recyclerView.setAdapter(new GenericAdapter(observableList) {
             @Override
             public int getLayoutType(int position, Object object) {
-                if(object instanceof String){
-                    return R.layout.adapter_price_type;
-                }
-                if(object instanceof Date){
-                    return R.layout.adapter_date_type;
-                }
-                if(object instanceof Empty){
-                    return R.layout.adapter_empty_type;
-                }
-
-                throw new AssertionError("Not a valid object ");
+                return R.layout.adapter_date_type;
             }
 
             @Override
-            public GenericViewholder getViewHolder(View view, int viewType) {
+            public GenericViewholder getViewHolder(final View view, int viewType) {
                 return ViewHolderFactory.create(view,viewType);
             }
         });
 
     }
 
-    public void add(View view){
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if(observableList.size()<10) {
-                    observableList.add("text " + count++);
-                    add(null);
-                }
-            }
-        },1000);
-
-    }
     public void remove(View view){
         observableList.clear();
     }

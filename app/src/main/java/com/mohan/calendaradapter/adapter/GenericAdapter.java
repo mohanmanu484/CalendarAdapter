@@ -1,4 +1,4 @@
-package com.mohan.calendaradapter;
+package com.mohan.calendaradapter.adapter;
 
 import android.support.annotation.CallSuper;
 import android.support.annotation.LayoutRes;
@@ -6,6 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.mohan.calendaradapter.ObservableList;
 
 /**
  * Created by mohang on 9/10/17.
@@ -28,7 +30,7 @@ public abstract class GenericAdapter<T> extends RecyclerView.Adapter<RecyclerVie
     @CallSuper
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((Binder) holder).setData(observableList.get(position));
+        ((Binder) holder).setData(observableList.get(position),position);
     }
 
     @Override
