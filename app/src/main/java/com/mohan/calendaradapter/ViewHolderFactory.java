@@ -39,8 +39,6 @@ public class ViewHolderFactory {
         public void setData(final Date data) {
             weekDay.setText(MyUtil.getWeekDayString(data));
             date.setText(MyUtil.getDateAndMonthString(data));
-
-
         }
 
     }
@@ -72,6 +70,10 @@ public class ViewHolderFactory {
         public void setData(Empty data) {
 
         }
+    }
+
+    public interface OnDateClickListener{
+        void onDateClick(Date date);
     }
 
 }

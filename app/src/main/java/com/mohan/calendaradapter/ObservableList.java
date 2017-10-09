@@ -5,11 +5,9 @@ import java.util.List;
 public interface ObservableList<T> extends List<T> {
     void addOnListChangedCallback(ObservableList.OnListChangedCallback<? extends ObservableList<T>> var1);
 
-    void removeOnListChangedCallback(ObservableList.OnListChangedCallback<? extends ObservableList<T>> var1);
+   // void removeOnListChangedCallback(ObservableList.OnListChangedCallback<? extends ObservableList<T>> var1);
 
-    public abstract static class OnListChangedCallback<T extends ObservableList> {
-        public OnListChangedCallback() {
-        }
+    public interface  OnListChangedCallback<T extends ObservableList> {
 
         public abstract void onChanged(T var1);
 

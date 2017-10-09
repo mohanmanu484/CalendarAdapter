@@ -1,33 +1,20 @@
 package com.mohan.calendaradapter;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class ObservableArrayList<T> extends ArrayList<T> implements ObservableList<T> {
-    @Override
-    public void addOnListChangedCallback(OnListChangedCallback<? extends ObservableList<T>> var1) {
-
-    }
-
-    @Override
-    public void removeOnListChangedCallback(OnListChangedCallback<? extends ObservableList<T>> var1) {
-
-    }
-   /* private transient ListChangeRegistry mListeners = new ListChangeRegistry();
+    private OnListChangedCallback mListeners;
 
     @Override
     public void addOnListChangedCallback(OnListChangedCallback listener) {
-        if (mListeners == null) {
-            mListeners = new ListChangeRegistry();
-        }
-        mListeners.add(listener);
+      this.mListeners=listener;
     }
 
-    @Override
+    /*@Override
     public void removeOnListChangedCallback(OnListChangedCallback listener) {
-        if (mListeners != null) {
-            mListeners.remove(listener);
-        }
-    }
+
+    }*/
 
     @Override
     public boolean add(T object) {
@@ -92,7 +79,7 @@ public class ObservableArrayList<T> extends ArrayList<T> implements ObservableLi
     public T set(int index, T object) {
         T val = super.set(index, object);
         if (mListeners != null) {
-            mListeners.notifyChanged(this, index, 1);
+            mListeners.onItemRangeChanged(this,index, 1);
         }
         return val;
     }
@@ -105,13 +92,13 @@ public class ObservableArrayList<T> extends ArrayList<T> implements ObservableLi
 
     private void notifyAdd(int start, int count) {
         if (mListeners != null) {
-            mListeners.notifyInserted(this, start, count);
+            mListeners.onItemRangeInserted(this, start, count);
         }
     }
 
     private void notifyRemove(int start, int count) {
         if (mListeners != null) {
-            mListeners.notifyRemoved(this, start, count);
+            mListeners.onItemRangeRemoved(this, start, count);
         }
-    }*/
+    }
 }
