@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class ObservableArrayList<T> extends ArrayList<T> implements ObservableList<T> {
-    private OnListChangedCallback mListeners;
+    private OnListChangedCallback observableListener;
 
     @Override
     public void addOnListChangedCallback(OnListChangedCallback listener) {
-      this.mListeners=listener;
+      this.observableListener =listener;
     }
 
     @Override
@@ -73,8 +73,8 @@ public class ObservableArrayList<T> extends ArrayList<T> implements ObservableLi
     @Override
     public T set(int index, T object) {
         T val = super.set(index, object);
-        if (mListeners != null) {
-            mListeners.onItemRangeChanged(this,index, 1);
+        if (observableListener != null) {
+            observableListener.onItemRangeChanged(this,index, 1);
         }
         return val;
     }
@@ -86,14 +86,14 @@ public class ObservableArrayList<T> extends ArrayList<T> implements ObservableLi
     }
 
     private void notifyAdd(int start, int count) {
-        if (mListeners != null) {
-            mListeners.onItemRangeInserted(this, start, count);
+        if (observableListener != null) {
+            observableListener.onItemRangeInserted(this, start, count);
         }
     }
 
     private void notifyRemove(int start, int count) {
-        if (mListeners != null) {
-            mListeners.onItemRangeRemoved(this, start, count);
+        if (observableListener != null) {
+            observableListener.onItemRangeRemoved(this, start, count);
         }
     }
 }
