@@ -7,8 +7,8 @@ import android.view.View;
  * Created by mohang on 9/10/17.
  */
 
-public abstract class GenericViewholder<T> extends RecyclerView.ViewHolder implements Binder<T>{
-    protected GenericViewholder(View itemView) {
+public abstract class GenericViewHolder<T> extends RecyclerView.ViewHolder implements Binder<T>{
+    protected GenericViewHolder(View itemView) {
         super(itemView);
     }
 }

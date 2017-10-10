@@ -5,13 +5,15 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.mohan.calendaradapter.adapter.GenericAdapter
-import com.mohan.calendaradapter.adapter.GenericViewholder
+import com.mohan.calendaradapter.adapter.GenericViewHolder
+import com.mohan.calendaradapter.adapter.ObservableArrayList
+import com.mohan.calendaradapter.adapter.ObservableList
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    val list=ObservableArrayList<Any>()
-    val verticalList=ObservableArrayList<Any>()
+    val list= ObservableArrayList<Any>()
+    val verticalList= ObservableArrayList<Any>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun createGenericAdapter(list:ObservableList<Any> ): GenericAdapter<Any> {
+    fun createGenericAdapter(list: ObservableList<Any>): GenericAdapter<Any> {
 
         return object : GenericAdapter<Any>(list) {
             override fun getLayoutType(position: Int, `object`: Any): Int {
@@ -50,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                 return R.layout.adapter_empty_type
             }
 
-            override fun getViewHolder(view: View?, viewType: Int): GenericViewholder<Any> {
+            override fun getViewHolder(view: View?, viewType: Int): GenericViewHolder<Any> {
                 return ViewHolderFactory.create(view, viewType);
             }
         }

@@ -1,4 +1,4 @@
-package com.mohan.calendaradapter;
+package com.mohan.calendaradapter.adapter;
 
 import java.util.List;
 

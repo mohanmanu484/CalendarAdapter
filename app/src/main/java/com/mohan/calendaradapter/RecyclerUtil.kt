@@ -15,7 +15,7 @@ import android.support.v7.widget.RecyclerView
     return recyclerView
 }
 
-fun getRecyclerWithDecoration(recyclerView: RecyclerView):RecyclerView{
+inline fun  getRecyclerWithDecoration(recyclerView: RecyclerView):RecyclerView{
     recyclerView.setHasFixedSize(true)
     recyclerView.addItemDecoration(MyDecoration())
     return recyclerView
@@ -23,7 +23,7 @@ fun getRecyclerWithDecoration(recyclerView: RecyclerView):RecyclerView{
 
 fun Activity.getGridList(recyclerView: RecyclerView,spanCount:Int,orientation:Int,reverseLayout:Boolean):RecyclerView{
 
-    getRecyclerWithDecoration(recyclerView);
+    getRecyclerWithDecoration(recyclerView)
     recyclerView.layoutManager=GridLayoutManager(this,spanCount,orientation,reverseLayout)
     return recyclerView
 

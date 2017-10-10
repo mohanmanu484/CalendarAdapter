@@ -4,7 +4,7 @@ import android.support.annotation.LayoutRes;
 import android.view.View;
 import android.widget.TextView;
 
-import com.mohan.calendaradapter.adapter.GenericViewholder;
+import com.mohan.calendaradapter.adapter.GenericViewHolder;
 
 import java.util.Date;
 
@@ -14,7 +14,7 @@ import java.util.Date;
 
 public class ViewHolderFactory {
 
-    public static GenericViewholder create(View view, @LayoutRes int viewtype){
+    public static GenericViewHolder create(View view, @LayoutRes int viewtype){
 
         if(viewtype==R.layout.adapter_date_type) {
             return new MyViewHolder(view);
@@ -28,7 +28,7 @@ public class ViewHolderFactory {
         throw new IllegalArgumentException("unsupported view type "+viewtype);
     }
 
-    public static class MyViewHolder extends GenericViewholder<Date>{
+    private static class MyViewHolder extends GenericViewHolder<Date> {
         TextView weekDay;
         TextView date;
         public MyViewHolder(View itemView) {
@@ -45,7 +45,7 @@ public class ViewHolderFactory {
 
     }
 
-    public static class PriceViewHolder extends GenericViewholder<String> {
+    private static class PriceViewHolder extends GenericViewHolder<String> {
 
         TextView priceData;
 
@@ -61,7 +61,7 @@ public class ViewHolderFactory {
         }
     }
 
-    public static class EmptyViewHolder extends GenericViewholder<Empty> {
+    private static class EmptyViewHolder extends GenericViewHolder<Empty> {
 
         public EmptyViewHolder(View itemView) {
             super(itemView);

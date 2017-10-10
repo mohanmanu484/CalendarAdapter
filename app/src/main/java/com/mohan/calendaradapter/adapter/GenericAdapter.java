@@ -2,12 +2,11 @@ package com.mohan.calendaradapter.adapter;
 
 import android.support.annotation.CallSuper;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.mohan.calendaradapter.ObservableList;
 
 /**
  * Created by mohang on 9/10/17.
@@ -17,13 +16,16 @@ public abstract class GenericAdapter<T> extends RecyclerView.Adapter<RecyclerVie
 
     ObservableList<Object> observableList;
 
-    public GenericAdapter(ObservableList<Object> objectList) {
+    public GenericAdapter(@NonNull ObservableList<Object> objectList) {
+        if(objectList==null){
+            throw new IllegalArgumentException("object list cannot be null");
+        }
         this.observableList = objectList;
         observableList.addOnListChangedCallback(this);
     }
 
     @Override
-    public GenericViewholder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public GenericViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return getViewHolder(LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false), viewType);
     }
 
@@ -47,7 +49,7 @@ public abstract class GenericAdapter<T> extends RecyclerView.Adapter<RecyclerVie
     public abstract @LayoutRes
     int getLayoutType(int position, Object object);
 
-    public abstract GenericViewholder<T> getViewHolder(View view, int viewType);
+    public abstract GenericViewHolder<T> getViewHolder(View view, int viewType);
 
     @Override
     public void onChanged(ObservableList<Object> var1) {

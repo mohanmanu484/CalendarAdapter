@@ -9,7 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.mohan.calendaradapter.adapter.GenericAdapter;
-import com.mohan.calendaradapter.adapter.GenericViewholder;
+import com.mohan.calendaradapter.adapter.GenericViewHolder;
+import com.mohan.calendaradapter.adapter.ObservableArrayList;
+import com.mohan.calendaradapter.adapter.ObservableList;
 
 import java.util.Date;
 
@@ -38,7 +40,7 @@ public class EmpyActivity extends AppCompatActivity {
             }
 
             @Override
-            public GenericViewholder getViewHolder(final View view, int viewType) {
+            public GenericViewHolder getViewHolder(final View view, int viewType) {
                 return ViewHolderFactory.create(view,viewType);
             }
         });

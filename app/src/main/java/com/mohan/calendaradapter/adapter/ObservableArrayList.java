@@ -1,4 +1,4 @@
-package com.mohan.calendaradapter;
+package com.mohan.calendaradapter.adapter;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,11 +10,6 @@ public class ObservableArrayList<T> extends ArrayList<T> implements ObservableLi
     public void addOnListChangedCallback(OnListChangedCallback listener) {
       this.mListeners=listener;
     }
-
-    /*@Override
-    public void removeOnListChangedCallback(OnListChangedCallback listener) {
-
-    }*/
 
     @Override
     public boolean add(T object) {
