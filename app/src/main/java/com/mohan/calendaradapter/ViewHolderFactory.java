@@ -1,7 +1,10 @@
 package com.mohan.calendaradapter;
 
+import android.graphics.Color;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mohan.calendaradapter.adapter.GenericViewHolder;
@@ -14,6 +17,7 @@ import java.util.Date;
 
 public class ViewHolderFactory {
 
+    @NonNull
     public static GenericViewHolder create(View view, @LayoutRes int viewtype){
 
         if(viewtype==R.layout.adapter_date_type) {
@@ -71,6 +75,40 @@ public class ViewHolderFactory {
         @Override
         public void setData(Empty data,int pos) {
 
+        }
+    }
+
+    public static GenericViewHolder createRatingViewHolder(View view){
+        return new RatingViewHolder(view);
+    }
+
+    private static class RatingViewHolder extends GenericViewHolder<String> {
+
+        TextView ratingItem;
+        LinearLayout ratingRoot;
+        public RatingViewHolder(View itemView) {
+            super(itemView);
+            ratingItem=itemView.findViewById(R.id.tvRating);
+            ratingRoot=itemView.findViewById(R.id.ratingRoot);
+        }
+
+
+        @Override
+        public void setData(String data,int pos) {
+            if(pos<6) {
+                ratingRoot.setBackgroundResource(R.drawable.background_rating_red);
+            }else if(pos<8){
+                ratingRoot.setBackgroundResource(R.drawable.background_rating_yellow);
+            }else {
+                ratingRoot.setBackgroundResource(R.drawable.background_rating_green);
+            }
+            ratingItem.setText(data);
+            ratingRoot.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ratingRoot.setBackgroundColor(Color.GREEN);
+                }
+            });
         }
     }
 

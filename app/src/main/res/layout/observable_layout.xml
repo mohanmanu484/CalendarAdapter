@@ -1,32 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
+
+    <com.mohan.calendaradapter.adapter.RatingBar
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:visibility="gone" />
+
+    <!--<android.support.v7.widget.RecyclerView
         android:id="@+id/observableList"
         android:layout_above="@+id/bottomview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </android.support.v7.widget.RecyclerView>
+    </android.support.v7.widget.RecyclerView>-->
     <LinearLayout
         android:id="@+id/bottomview"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <Button
-        android:text="Remove"
-        android:onClick="remove"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Button
-        android:text="Add"
-        android:onClick="add"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="remove"
+            android:text="Remove" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="add"
+            android:text="Add" />
     </LinearLayout>
+
+    <!--
+    canvas.drawLine(50,20,100,20,rectanglePaint);
+        RectF rectFc=new RectF();
+        rectFc.set(90,20,110,40);
+
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="10">
+
+
+        <com.mohan.calendaradapter.adapter.LeftCorneredRatingView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="2"
+            app:borderColor="@color/red"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="3"
+            app:borderColor="@color/red"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="4"
+            app:borderColor="@color/red"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="5"
+            app:borderColor="@color/red"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="6"
+            app:borderColor="@color/red"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="7"
+            app:borderColor="@color/yellow"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="8"
+            app:borderColor="@color/yellow"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="9"
+            app:borderColor="@color/green"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mohan.calendaradapter.adapter.RightCorneredRatingView
+            android:layout_width="0dp"
+            app:borderColor="@color/green"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+
+    <com.mohan.calendaradapter.adapter.TagView
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="100dp"
+        app:fillColor="@color/colorAccent"
+        android:text="30% off"
+        android:textSize="10sp"
+        android:textColor="@color/white"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content" />
+
+
+    <!--   <com.mohan.calendaradapter.adapter.SquareView
+           android:layout_width="match_parent"
+           android:layout_height="200dp"
+        />-->
+
+    <!--
+    RectF strokeLeftTopCornerRect=new RectF(104,244,114,254);
+
+    -->
+
+
 </RelativeLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:id="@+id/ratingRoot">
+
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:tag="1"
+            app:corners="left"
+            app:state="normal"
+
+            android:text="1"
+            app:borderColor="@color/red"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="2"
+            android:tag="2"
+
+            app:borderColor="@color/red"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="3"
+            android:tag="3"
+            app:borderColor="@color/red"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="4"
+            android:tag="4"
+            app:borderColor="@color/red"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="5"
+            android:tag="5"
+            app:borderColor="@color/red"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="6"
+            android:tag="6"
+            app:borderColor="@color/red"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="7"
+            app:selectedStateColor="@color/yellow"
+            android:tag="7"
+            app:state="normal"
+            app:borderColor="@color/yellow"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="8"
+            android:tag="8"
+            app:selectedStateColor="@color/yellow"
+            app:state="normal"
+            app:borderColor="@color/yellow"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:text="9"
+            android:tag="9"
+            app:selectedStateColor="@color/green"
+            app:borderColor="@color/green"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mohan.calendaradapter.adapter.CommonRatingView
+            android:layout_width="0dp"
+            android:tag="10"
+            app:corners="right"
+            app:state="normal"
+            android:text="10"
+            app:selectedStateColor="@color/green"
+            app:borderColor="@color/green"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+
+
+</LinearLayout>

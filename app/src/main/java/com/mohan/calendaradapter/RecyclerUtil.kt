@@ -1,6 +1,8 @@
 package com.mohan.calendaradapter
 
 import android.app.Activity
+import android.graphics.Paint
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -17,7 +19,12 @@ import android.support.v7.widget.RecyclerView
 
 inline fun  getRecyclerWithDecoration(recyclerView: RecyclerView):RecyclerView{
     recyclerView.setHasFixedSize(true)
-    recyclerView.addItemDecoration(MyDecoration())
+    //recyclerView.addItemDecoration(MyDecoration())
+    val paint=Paint(Paint.ANTI_ALIAS_FLAG)
+    paint.color=ContextCompat.getColor(recyclerView.context,R.color.accent_material_dark)
+    paint.setStyle(Paint.Style.STROKE);
+    paint.setStrokeWidth(4.0f);
+    recyclerView.addItemDecoration(SimpleDividerItemDecoration())
     return recyclerView
 }
 

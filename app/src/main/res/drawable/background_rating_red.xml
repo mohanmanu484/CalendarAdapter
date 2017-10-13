@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- TOP STROKE-->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/bottom_stroke_color" />
+
+        </shape>
+    </item>
+  <!--  &lt;!&ndash; BOTTOM STROKE&ndash;&gt;
+    <item android:top="10dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/bottom_stroke_color" />
+        </shape>
+    </item>-->
+    <!-- MAIN SHAPE -->
+    <item android:top="1dp" android:left="1dp"  android:bottom="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+</layer-list>

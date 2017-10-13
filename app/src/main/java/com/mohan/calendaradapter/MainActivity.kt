@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import com.mohan.calendaradapter.adapter.GenericAdapter
+import com.mohan.calendaradapter.adapter.GenericKotlinAdapter
 import com.mohan.calendaradapter.adapter.GenericViewHolder
 import com.mohan.calendaradapter.adapter.ObservableArrayList
 import com.mohan.calendaradapter.adapter.ObservableList
@@ -39,10 +39,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun createGenericAdapter(list: ObservableList<Any>): GenericAdapter<Any> {
-
-        return object : GenericAdapter<Any>(list) {
+    fun createGenericAdapter(list: ObservableList<Any>) = object : GenericKotlinAdapter<Any>(list) {
             override fun getLayoutType(position: Int, `object`: Any): Int {
+
                 if(`object` is String){
                     return@getLayoutType R.layout.adapter_price_type
                 }
@@ -52,10 +51,10 @@ class MainActivity : AppCompatActivity() {
                 return R.layout.adapter_empty_type
             }
 
-            override fun getViewHolder(view: View?, viewType: Int): GenericViewHolder<Any> {
-                return ViewHolderFactory.create(view, viewType);
+            override fun getViewHolder(view: View, viewType: Int): GenericViewHolder<Any> {
+                return ViewHolderFactory.create(view, viewType)
             }
         }
-    }
+
 
 }

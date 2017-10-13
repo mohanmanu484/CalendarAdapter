@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CommonRatingView">
+        <attr name="android:text" format="string" />
+        <attr name="android:textColor" format="color"/>
+        <attr name="borderColor" format="color"/>
+        <attr name="ratingFillColor" format="color"/>
+        <attr name="selectedStateColor" format="color"/>
+        <attr name="state" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="selected" value="1"/>
+            <enum name="grayed" value="2"/>
+        </attr>
+        <attr name="corners" format="enum">
+            <enum name="zero" value="0"/>
+            <enum name="left" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+        <!--<attr name="labelPosition" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>-->
+    </declare-styleable>
+
+    <declare-styleable name="TagView">
+        <attr name="android:text" format="string" />
+        <attr name="android:textColor" format="color"/>
+        <attr name="fillColor" format="color"/>
+        <attr name="android:textSize" format="dimension"/>
+        <!--<attr name="labelPosition" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>-->
+    </declare-styleable>
+
+</resources>

@@ -9,4 +9,11 @@
     <color name="black">#000</color>
     <color name="grey">#d9d9d9</color>
     <color name="dark_grey">#a1a1a1</color>
+
+    <color name="top_stroke_color">#0000FF</color>
+    <color name="bottom_stroke_color">#FF0000</color>
+    <color name="green">#00FF00</color>
+
+    <color name="red">#ff0000</color>
+    <color name="yellow">#ded121</color>
 </resources>
