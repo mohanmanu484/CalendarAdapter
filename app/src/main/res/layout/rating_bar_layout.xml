@@ -95,9 +95,9 @@
             android:layout_width="0dp"
             android:tag="10"
             app:corners="right"
-            app:state="normal"
+            app:state="selected"
             android:text="10"
-            app:selectedStateColor="@color/green"
+            app:selectedStateColor="@color/yellow"
             app:borderColor="@color/green"
             android:layout_height="wrap_content"
             android:layout_weight="1" />

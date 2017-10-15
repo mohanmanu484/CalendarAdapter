@@ -5,8 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/black"
+    android:background="@color/white"
     tools:context="com.mohan.calendaradapter.MainActivity">
+
+<!--
+ <com.mohan.calendaradapter.adapter.ExpView
+     android:layout_width="100dp"
+     android:layout_height="100dp" />-->
+ <com.mohan.calendaradapter.adapter.SwitchView
+     android:layout_marginTop="50dp"
+     android:layout_marginLeft="50dp"
+     android:layout_width="50dp"
+     app:switchButtoncolor="@color/green"
+     app:switchFillColor="@color/yellow"
+     android:layout_height="100dp" />
 
  <com.mohan.calendaradapter.adapter.RatingBar
      android:id="@+id/ratingBar"
@@ -14,6 +26,7 @@
      android:layout_marginLeft="16dp"
      android:layout_marginRight="16dp"
      android:layout_width="match_parent"
-     android:layout_height="wrap_content"></com.mohan.calendaradapter.adapter.RatingBar>
+     android:layout_height="wrap_content">
+ </com.mohan.calendaradapter.adapter.RatingBar>
 
 </LinearLayout>

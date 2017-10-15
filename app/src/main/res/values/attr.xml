@@ -33,4 +33,9 @@
         </attr>-->
     </declare-styleable>
 
+    <declare-styleable name="SwitchView">
+        <attr name="switchFillColor" format="color" />
+        <attr name="switchButtoncolor" format="color"/>
+    </declare-styleable>
+
 </resources>
