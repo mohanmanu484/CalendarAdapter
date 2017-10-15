@@ -1,5 +1,6 @@
 package com.mohan.calendaradapter.adapter;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -8,6 +9,8 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.mohan.calendaradapter.R;
@@ -18,11 +21,24 @@ import com.mohan.calendaradapter.R;
 
 public class SwitchView extends View {
 
-    Paint paint=new Paint(Paint.ANTI_ALIAS_FLAG);
-    Paint innerRadius=new Paint(Paint.ANTI_ALIAS_FLAG);
+    Paint fillPaint =new Paint(Paint.ANTI_ALIAS_FLAG);
+    Paint switchPaint =new Paint(Paint.ANTI_ALIAS_FLAG);
     RectF rectF=new RectF();
-    private int mFillColor;
-    private int mSwitchColor;
+    private CheckedChangeListener checkedChangeListener;
+    private float pos=1;
+    private boolean checked;
+    private int onFillColor=Color.YELLOW;
+    private int offFillColor=Color.WHITE;
+    private int onSwitchColor=Color.GRAY;
+    private int offSwichColor=Color.BLUE;
+    private final ValueAnimator onAnimator = ValueAnimator.ofFloat(1,1.5f,2,2.5f,3 );
+    private final ValueAnimator offAnimator = ValueAnimator.ofFloat(3,2.5f,2f,1.5f,1);
+
+    public static final String TAG = "SwitchView";
+
+
+
+
 
     public SwitchView(Context context) {
         super(context);
@@ -43,28 +59,24 @@ public class SwitchView extends View {
         if (attributeSet != null) {
             TypedArray a = getContext().getTheme().obtainStyledAttributes(
                     attributeSet,
-                    R.styleable.CommonRatingView,
+                    R.styleable.SwitchView,
                     0, 0);
 
             try {
-                mFillColor = a.getColor(R.styleable.SwitchView_switchFillColor, Color.WHITE);
-                mSwitchColor = a.getColor(R.styleable.SwitchView_switchButtoncolor, Color.BLACK);
+                onFillColor = a.getColor(R.styleable.SwitchView_switchOnFillColor, Color.YELLOW);
+                offFillColor = a.getColor(R.styleable.SwitchView_switchOffFillColor, Color.WHITE);
+                onSwitchColor = a.getColor(R.styleable.SwitchView_switchOnFillColor, Color.GRAY);
+                offSwichColor = a.getColor(R.styleable.SwitchView_switchOffFillColor, Color.BLUE);
+                checked =a.getBoolean(R.styleable.SwitchView_checked,false);
+                pos=checked?3:1;
 
             } finally {
                 a.recycle();
             }
         }
-
-
-
-        paint.setColor(mFillColor);
-        paint.setStyle(Paint.Style.FILL);
-
-        innerRadius.setColor(mSwitchColor);
-        innerRadius.setStyle(Paint.Style.FILL);
-
-
-
+        setOnTouchListener(onTouchListener);
+        fillPaint.setStyle(Paint.Style.FILL);
+        switchPaint.setStyle(Paint.Style.FILL);
     }
 
     @Override
@@ -72,9 +84,15 @@ public class SwitchView extends View {
 
         int width=getMeasuredWidth();
         int height = getMeasuredHeight();
+
+        Log.d(TAG, "onDraw: canvas width "+width);
+        Log.d(TAG, "onDraw: canvas height "+height);
+
         rectF.set(0,0,width,height);
-        canvas.drawRoundRect(rectF,height/2,height/2,paint);
-        canvas.drawCircle((width/4)*3,height/2,height/3,innerRadius);
+        fillPaint.setColor(checked ?offFillColor:onFillColor);
+        switchPaint.setColor(checked ?offSwichColor:onSwitchColor);
+        canvas.drawRoundRect(rectF,height/2,height/2, fillPaint);
+        canvas.drawCircle((width/4)*pos,height/2,height/3, switchPaint);
 
     }
     @Override
@@ -118,4 +136,49 @@ public class SwitchView extends View {
         setMeasuredDimension(width, width/2);
     }
 
+
+
+    public void addCheckedChangeListener(CheckedChangeListener checkedChangeListener){
+        this.checkedChangeListener=checkedChangeListener;
+    }
+
+    public interface CheckedChangeListener{
+        void onCheckedChange(boolean checked);
+    }
+
+    OnTouchListener onTouchListener=new OnTouchListener() {
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+
+            switch (event.getAction()){
+
+                case  MotionEvent.ACTION_DOWN :
+                toggleState();
+                Log.d(TAG, "onTouch: clicked");
+                return true;
+
+            }
+
+
+
+            return false;
+        }
+    };
+
+    private void toggleState() {
+        ValueAnimator angelAnimator= checked ?offAnimator:onAnimator;
+        checked =!checked;
+        Log.d(TAG, "toggleState: "+checked);
+        angelAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                float value = (float) valueAnimator.getAnimatedValue();
+                Log.d(TAG, "onAnimationUpdate: "+value);
+                pos=value;
+               invalidate();
+            }
+        });
+        angelAnimator.setDuration(300);
+        angelAnimator.start();
+    }
 }

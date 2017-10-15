@@ -19,37 +19,38 @@ import java.util.List;
 
 public class RatingBar extends LinearLayout {
 
-    List<TextView> views=new ArrayList<>();
+    List<TextView> views = new ArrayList<>();
 
-    TextView textView=new TextView(getContext());
+    TextView textView = new TextView(getContext());
     private RatingListener ratingListener;
     LinearLayout viewGroup;
-    int mDirtyCount=0;
+    int mDirtyCount = 0;
 
-    public void init(){
-       inflate(getContext(), R.layout.rating_bar_layout,this);
-       viewGroup=findViewById(R.id.ratingRoot);
-       initListeners();
+    public void init() {
+        inflate(getContext(), R.layout.rating_bar_layout, this);
+        viewGroup = findViewById(R.id.ratingRoot);
+        initListeners();
     }
 
-    private void greyOutBackground(){
+    private void greyOutBackground() {
         for (int i = 0; i < viewGroup.getChildCount(); i++) {
-            TextView child= (TextView) viewGroup.getChildAt(i);
+            TextView child = (TextView) viewGroup.getChildAt(i);
             child.setBackgroundResource(R.drawable.background_rating_grey);
         }
     }
 
     private void initListeners() {
-       // LinearLayout viewGroup=findViewById(R.id.ratingRoot);
+        // LinearLayout viewGroup=findViewById(R.id.ratingRoot);
         for (int i = 0; i < viewGroup.getChildCount(); i++) {
             viewGroup.getChildAt(i).setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(mDirtyCount++<100) {
+                    if (mDirtyCount++ < 100) {
                         if (ratingListener != null) {
                             int pos = Integer.valueOf((String) view.getTag());
-                         //   greyOutBackground();
-                            if(view instanceof CommonRatingView) {
+                            //   greyOutBackground();
+                            if (view instanceof CommonRatingView) {
+                                grayOutViews();
                                 ((CommonRatingView) view).setSelectedState(CommonRatingView.States.SELECTED);
                                 //((CommonRatingView) view).setBorderColor(CommonRatingView.States.SELECTED);
                             }
@@ -62,10 +63,20 @@ public class RatingBar extends LinearLayout {
         }
     }
 
-    private int getColorForPos(int pos){
-        if(pos<7){
+    private void grayOutViews() {
+        for (int i = 0; i < viewGroup.getChildCount(); i++) {
+           View view= viewGroup.getChildAt(i);
+            if (view instanceof CommonRatingView) {
+                ((CommonRatingView) view).setSelectedState(CommonRatingView.States.GRAYED_OUT);
+            }
+
+        }
+    }
+
+    private int getColorForPos(int pos) {
+        if (pos < 7) {
             return Color.RED;
-        }else if(pos<9){
+        } else if (pos < 9) {
             return Color.YELLOW;
         }
         return Color.GREEN;
@@ -76,7 +87,7 @@ public class RatingBar extends LinearLayout {
         this.ratingListener = ratingListener;
     }
 
-    public interface RatingListener{
+    public interface RatingListener {
         void onRatingSelect(int rate);
     }
 

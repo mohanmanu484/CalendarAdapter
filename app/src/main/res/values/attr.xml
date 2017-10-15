@@ -34,8 +34,11 @@
     </declare-styleable>
 
     <declare-styleable name="SwitchView">
-        <attr name="switchFillColor" format="color" />
-        <attr name="switchButtoncolor" format="color"/>
+        <attr name="switchOnFillColor" format="color" />
+        <attr name="switchOnButtoncolor" format="color"/>
+        <attr name="switchOffFillColor" format="color" />
+        <attr name="switchOffButtoncolor" format="color"/>
+        <attr name="checked" format="boolean"/>
     </declare-styleable>
 
 </resources>

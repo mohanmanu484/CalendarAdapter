@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@color/black"
     tools:context="com.mohan.calendaradapter.MainActivity">
 
 <!--
@@ -15,9 +15,7 @@
  <com.mohan.calendaradapter.adapter.SwitchView
      android:layout_marginTop="50dp"
      android:layout_marginLeft="50dp"
-     android:layout_width="50dp"
-     app:switchButtoncolor="@color/green"
-     app:switchFillColor="@color/yellow"
+     android:layout_width="40dp"
      android:layout_height="100dp" />
 
  <com.mohan.calendaradapter.adapter.RatingBar

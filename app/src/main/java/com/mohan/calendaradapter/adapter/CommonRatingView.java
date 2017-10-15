@@ -93,8 +93,24 @@ public class CommonRatingView extends View {
 
     public void setSelectedState(States selectedState) {
         this.selectedState = selectedState.ordinal();
-        paint.setColor(mSelectedColor);
-        textPaint.setColor(Color.WHITE);
+        switch (selectedState){
+            case SELECTED:
+                paint.setColor(mSelectedColor);
+                textPaint.setColor(Color.WHITE);
+                linePaint.setColor(mSelectedColor);
+                cornerPaint.setColor(mSelectedColor);
+                break;
+
+            case GRAYED_OUT:
+                paint.setColor(Color.WHITE);
+                textPaint.setColor(Color.GRAY);
+                linePaint.setColor(Color.GRAY);
+                cornerPaint.setColor(Color.GRAY);
+
+
+
+
+        }
         invalidate();
     }
 
@@ -182,7 +198,7 @@ public class CommonRatingView extends View {
                 drawZeroCorneredView(canvas, width, height);
             }
         } else {
-            /*paint.setColor(Color.RED);
+            /*fillPaint.setColor(Color.RED);
             textPaint.setColor(Color.WHITE);*/
             if(corners==Corners.LEFT.ordinal()) {
                 drawLeftCorneredView(canvas, width, height);
