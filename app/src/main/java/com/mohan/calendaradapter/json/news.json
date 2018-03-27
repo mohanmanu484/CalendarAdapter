@@ -30,5 +30,78 @@
       "subTitle": "Though Kohli's franchise RCB hasn't had the success fans expect them to achieve in the cash-rich cricket league, the 29-year-old has been their best performer over the last few years. While tattoo was just the start, a new haircut is another change that Kohli has made ahead of the IPL season 11.",
       "redirectionUrl": "http://www.timesnownews.com/sports/cricket/article/ahead-of-ipl-2018-rcb-skipper-virat-kohli-flaunts-his-new-hairstyle-see-pic/209752"
     }
-  ]
+  ],
+   "players" : [ {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Virat-Kohli_0.png",
+    "name" : "Virat Kohli"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/ab-de-villiers_0.png",
+    "name" : "AB de Villiers"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/sarfaraz-khan11.png",
+    "name" : " Sarfraz Khan "
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/brendon-mccullum%20(1).png",
+    "name" : "Brendon McCullum"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Chris-WoakesZ.png",
+    "name" : "Chris Woakes"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Colin-de-Grandhomme%20(1).png",
+    "name" : " Colin de Grandhomme "
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Moeen-Ali%20(1).png",
+    "name" : "Moeen Ali"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Quinton-de-Kock%20(1).png",
+    "name" : "Quinton de Kock"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Umesh-Yadav-%20(1).png",
+    "name" : "Umesh Yadav"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Yuzvendra-Chahal.png",
+    "name" : "Yuzvendra Chahal"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Manan-Vohra%20(1).png",
+    "name" : "Manan Vohra"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Kulwant-Khejroliya%20(1).png",
+    "name" : "Kulwant Kejroliya"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Aniket-Choudhary%20(1).png",
+    "name" : "Aniket Choudhary"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Navdeep-Saini%20(1).png",
+    "name" : "Navdeep Saini"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Murugan-Ashwin%20(1).png",
+    "name" : "Murugan Ashwin"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Mandeep-Singh%20(1).png",
+    "name" : "Mandeep Singh"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Washington-Sundar%20(1).png",
+    "name" : "Washington Sundar"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Pawan-Negi%20(1).png",
+    "name" : "Pawan Negi"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Mohammed-Siraj%20(1).png",
+    "name" : "Mohammad Siraj"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Nathan-Coluter-Nile%20(1).png",
+    "name" : "Nathan Coulter-Nile "
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Anirudha-Joshi%20(1).png",
+    "name" : "Anirudha Joshi"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Parthiv-Patel%20(1).png",
+    "name" : "Parthiv Patel"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Tim-Southee%20(1).png",
+    "name" : "Tim Southee"
+  }, {
+    "imageUrl" : "https://raw.githubusercontent.com/mohanmanu484/CalendarAdapter/master/app/src/main/java/com/mohan/calendaradapter/players/Pavan-Deshpande%20(1).png",
+    "name" : "Pavan Deshpande "
+  } ]
 }
